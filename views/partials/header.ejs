@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>BeProgrammer</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Blog Template">
+	<meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+	
+	<!-- FontAwesome JS-->
+	<script src="https://kit.fontawesome.com/03ae858753.js" crossorigin="anonymous"></script>
+    
+	<!-- popupS-->
+	<link rel="stylesheet" href="popupS.css">
+
+
+	<!-- Theme CSS -->
+	<link id="theme-style" rel="stylesheet" href="/stylesheet/main.css">
+	<link id="theme-style" rel="stylesheet" href="/stylesheet/upgradeMain.css">
+	<link id="theme-style" rel="stylesheet" href="/stylesheet/sass.scss">
+
+</head>
+
+<body>
+
+	<header class="header text-center scroll scrollbar">
+		<h1 class="blog-name pt-lg-4 mb-0 headerHover">
+			<a href="/">
+				<i class="fas fa-home fa-fw mr-2"></i> Barak Amzaleg</a>
+		</h1>
+
+		<nav class="navbar navbar-expand-lg navbar-dark">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column">
+				<div class="profile-section pt-3 pt-lg-0">
+
+					<img class="profile-image mb-3 rounded-circle mx-auto" src="https://scontent.ftlv1-1.fna.fbcdn.net/v/t1.0-9/s960x960/54417748_10215350726694389_8367385419834195968_o.jpg?_nc_cat=104&_nc_ohc=yrYEIq-WYOkAQlzdBl_xsxwkq7VAUcM7mfMALpdRu_DxRmLXJm2qzTDaw&_nc_ht=scontent.ftlv1-1.fna&oh=60610e1bc7f0e383d8aba5259ae0e4df&oe=5E66D32F"
+					    alt="image">
+					<div class="bio mb-3">Hello! My name is Barak Amzaleg.<br> I am a Full Stack Web Programmer, and guess what? I learnt it all by myself.
+					</div>
+					<!--//bio-->
+					<ul class="social-list list-inline mx-auto">
+						<li class="list-inline-item">
+							<a href="https://www.facebook.com/barak.amzaleg" target="_blank" class="headerHover">
+								<i class="fab fa-facebook fa-fw"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://www.linkedin.com/in/barak-amzaleg-7b944b168/" target="_blank" class="headerHover">
+								<i class="fab fa-linkedin-in fa-fw"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://www.instagram.com/barakamzaleg/" target="_blank" class="headerHover">
+								<i class="fab fa-instagram fa-fw"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://stackoverflow.com/users/11106097/barak-amzaleg" class="headerHover" target="_blank">
+								<i class="fab fa-stack-overflow fa-fw"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://github.com/Barakaa5/jubilant-spork" class="headerHover" target="_blank">
+								<i class="fab fa-github-alt"></i>
+							</a>
+						</li>
+					</ul>
+					<!--//social-list-->
+					<hr style="margin-bottom: 1rem;">
+				</div>
+				<!--//profile-section-->
+				<ul class="navbar-nav flex-column text-left">
+					<!--//<li class="nav-item">
+						 if(!currentUser){ 
+							<a class="nav-link headerHover" href="/register">
+								<i class="fas fa-user-plus fa-fw mr-2"></i>Sign up</a>
+							<a class="nav-link headerHover" href="/login">
+								<i class="fas fa-sign-in-alt fa-fw mr-2"></i>Login</a>
+							 } else { 
+								<a href="/" class="Signed mr-2">Signed In As
+									currentUser.username 
+								</a>
+								<a class="nav-link headerHover" href="/logout">
+									<i class="fas fa-sign-out-alt fa-fw mr-2"></i>Logout</a>
+								} 
+					</li>-->
+					<li class="nav-item">
+						<a class="nav-link headerHover" href="/">
+							<i class="far fa-address-card fa-fw mr-2"></i>About Me</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link headerHover" href="/services">
+							<i class="fas fa-briefcase fa-fw mr-2"></i>Services &amp; Pricing</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link headerHover" href="/resume">
+							<i class="fas fa-file-alt fa-fw mr-2"></i>Resume</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link headerHover" href="/blogPosts">
+							<i class="fas fa-blog fa-fw mr-2"></i>Blog</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link headerHover" href="/contact">
+							<i class="fas fa-envelope-open-text fa-fw mr-2"></i>Contact</a>
+					</li>
+					<% if(currentUser && (currentUser._id.equals("5dc84c8e5fffae042ba2e5ec"))){ %>
+					<li class="nav-item">
+						<a class="nav-link headerHover" href="/newBlogPost">
+								<i class="fas fa-plus fa-fw mr-2 headerHover"></i>Add New Post</a>
+					</li>
+						<% } %>
+				</ul>
+
+				<div class="my-2 my-md-3">
+					<a class="btn btn-primary headerHover" href="/contact">
+						<i class="fas fa-paper-plane mr-2"></i>Hire Me!</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+

@@ -1,0 +1,77 @@
+<% include ../partials/header %>
+
+	<!--Calculate time Reading of a description-->
+	<% function timeReading(description) {
+    const wordsPerMinute = 200; // Average case.
+    let textLength = description.split(" ").length + 500; // Split by words
+    if(textLength > 0){
+      let value = Math.ceil(textLength / wordsPerMinute);
+      return value;
+    }
+}%>
+		<!--Calculate time Reading of a description-->
+
+		<!--Import "Concert One" Google Fonts-->
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Ubuntu:500&display=swap');
+		</style>
+		<!--Import "Concert One" Google Fonts-->
+
+		<div class="main-wrapper">
+			<div class="video">
+				<div class="video-title">BeProgrammer</div>
+				<video width="320" height="240" autoplay muted loop>
+					<source src="./GoogleBlogVideo.mp4"
+					    type="video/mp4">
+				</video>
+			</div>
+
+			<section class="blog-list row">
+				<% blogPost.forEach(function(blogPost){  %>
+					<div class="mb-5 col-12 col-sm-6 col-xl-4 cardAnimated">
+						<div class="card cardHover">
+							<div class="hovereffect">
+								<img class="img-responsive card-img-top" src="<%= blogPost.image %>" alt="">
+								<div class="overlay">
+									<a class="info" href="/blogPost/<%= blogPost._id %>" style="margin-top: 28%;">Read More</a>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="card-headline" style="text-align: center;">
+									<a href="/blogPost/<%= blogPost._id %>">
+										<%= blogPost.title %>
+									</a>
+								</div>
+								<hr style="margin-bottom: 0px;">
+								<div class="meta mb-1">
+									<span class="date">
+										<%= moment(blogPost.createdAt).fromNow() %>
+									</span>
+									<span class="time">
+										<%= timeReading(blogPost.description)%> min read</span>
+									<span class="comment">
+										<a href="https://protected-harbor-74374.herokuapp.com/blogPost/<%= blogPost._id %>#disqus_thread"></a>
+									</span>
+								</div>
+								<p class="card-text">
+									<%= blogPost.description.substring(0,290) %>...
+								</p>
+								<div style="text-align: center;">
+									<a class="btn btn-primary" href="/blogPost/<%= blogPost._id %>">Read more</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<% }); %>
+			</section>
+
+			<div class="container">
+				<nav class="blog-nav nav nav-justified mb-5">
+					<a class="nav-link-next nav-item nav-link rounded" href="#">Show all articles
+						<i class="arrow-next fas fa-long-arrow-alt-right"></i>
+					</a>
+				</nav>
+			</div>
+		</div>
+		<!--//main-wrapper-->
+		<% include ../partials/footer %>

@@ -1,0 +1,170 @@
+<% include ../partials/header %>
+	<%
+function timeReading(description) {
+	const wordsPerMinute = 200; // Average case.
+	let textLength = description.split(' ').length + 500; // Split by words
+	if (textLength > 0) {
+		let value = Math.ceil(textLength / wordsPerMinute);
+		return value;
+	}
+}
+%>
+
+		<div class="main-wrapper">
+			<article class="blog-post px-3 py-5 p-md-5">
+				<div class="container">
+					<header class="blog-post-header">
+						<h2 class="title mb-2">
+							<%= blogPost.title %>
+						</h2>
+						<div class="meta mb-3">
+							<span class="date">Published
+								<%= moment(blogPost.createdAt).fromNow() %>
+							</span>
+							<span class="time">
+								<%= timeReading(blogPost.description)%> min read</span>
+							<span class="comment">
+								<a href="https://be-programmer.herokuapp.com/blogPost/<%= blogPost._id %>#disqus_thread"></a>
+							</span>
+							<% if(currentUser && (currentUser._id.equals("5dc84c8e5fffae042ba2e5ec"))){ %>
+								<a href="/blogPost/<%= blogPost._id %>/edit">Edit Blog</a>
+								<form class="d-inline" action="/blogPost/<%= blogPost._id %>?_method=DELETE" method="POST">
+									<button>Remove Blog</button>
+								</form>
+								<% } %>
+						</div>
+					</header>
+					<div class="blog-post-body">
+						<img class="img-fluid imgBlogPost d-block mx-auto" src="<%= blogPost.image %>" alt="image">
+						<p>
+							<%= blogPost.description %>
+						</p>
+
+						<div class="VideoExample">
+							<h3 class="mt-5 mb-3">Video Example</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+								quis, sem. Nulla consequat massa quis enim. </p>
+							<div class="YoutubeVideo">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/L0zxkCqjVdE" allowfullscreen>
+								</iframe>
+							</div>
+						</div>
+
+						<div class="Typography" style="margin-top: 3rem;">
+							<h3 class="mt-5 mb-3">Typography</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+							<h5 class="my-3">Bullet Points:</h5>
+							<ul class="mb-5">
+								<li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
+								<li class="mb-2">Aenean commodo ligula eget dolor.</li>
+								<li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
+							</ul>
+							<ol class="mb-5">
+								<li class="mb-2">Lorem ipsum dolor sit amet consectetuer.</li>
+								<li class="mb-2">Aenean commodo ligula eget dolor.</li>
+								<li class="mb-2">Aenean massa cum sociis natoque penatibus.</li>
+							</ol>
+							<h5 class="my-3">Quote Example:</h5>
+							<blockquote class="blockquote m-lg-5 py-3 pl-4 px-lg-5">
+								<p class="mb-2">You might not think that programmers are artists, but programming is an extremely creative profession. It's logic-based creativity.</p>
+								<footer class="blockquote-footer">John Romero</footer>
+							</blockquote>
+						</div>
+
+						<div class="Tweet" style="margin-top: 3rem;">
+							<h5 class="mb-3">Embed A Tweet:</h5>
+							<blockquote class="twitter-tweet" data-lang="en">
+								<p lang="en" dir="ltr">1969:
+									<br>-what&#39;re you doing with that 2KB of RAM?
+									<br>-sending people to the moon
+									<br>
+									<br>2017:
+									<br>-what&#39;re you doing with that 1.5GB of RAM?
+									<br>-running Slack</p>&mdash; I Am Devloper (@iamdevloper)
+								<a href="https://twitter.com/iamdevloper/status/926458505355235328?ref_src=twsrc%5Etfw">November 3, 2017</a>
+							</blockquote>
+							<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</div>
+
+						<div class="tableExample" style="margin-top: 3rem;">
+							<h5 class="my-3">Table Example:</h5>
+							<table class="table table-striped my-5">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">First</th>
+										<th scope="col">Last</th>
+										<th scope="col">Handle</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>Mark</td>
+										<td>Otto</td>
+										<td>@mdo</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>Jacob</td>
+										<td>Thornton</td>
+										<td>@fat</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<hr>
+
+						<!--//<% //blogPost.comments.forEach(function(comment){ %>
+							<div class="blogpost__comments">
+								<p>
+									<strong>
+										<%= //comment.author.username %>
+									</strong> -
+									<%= //comment.text %>
+								</p>
+								<% //if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+									<a class="btn btn-warning" href="/blogPost/<%= //blogPost._id %>/comments/<%= //comment._id %>/edit">Edit Comment</a>
+									<form id="delete-form" action="/blogpost/<%=//blogPost._id %>/comments/<%=//comment._id %>?_method=DELETE" method="POST">
+										<input type="submit" class="btn btn-xs btn-danger" value="Delete Comment">
+									</form>
+									<% //} %>
+										<% //}) %>
+							</div>
+							<a class="btn btn-success" href="/blogPost/<%= //blogPost._id %>/comments/newComment">Add comment</a>-->
+					</div>
+					<!--//blog-post-body-->
+				</div>
+				<!--//container-->
+			</article>
+
+			<div id="disqus_thread"></div>
+			<script>
+				/*var disqus_config = function () {
+				this.page.url ="https://protected-harbor-74374.herokuapp.com/blogPost/" ;  
+				this.page.identifier = "" ;
+				this.page.title = "";
+				};*/
+			
+				(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document,
+						s = d.createElement('script');
+					s.src = 'https://beprogrammer-1.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the
+				<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+			</noscript>
+
+		</div>
+		<!--//main-wrapper-->
+
+		<% include ../partials/footer %>

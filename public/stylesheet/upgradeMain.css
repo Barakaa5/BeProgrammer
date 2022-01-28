@@ -1,0 +1,490 @@
+iframe{
+	max-width: 100%;
+	min-width: 60%;
+}
+
+.nav-item .nav-link{
+	width: fit-content;
+}
+
+.blog-lists{
+	padding: 2rem 3rem;
+	padding-bottom: 0rem;
+}
+
+/* Jumbutron video ====================== */
+.video{
+    position: relative;
+    background: white; /* IE */
+	height: 18rem;
+    margin: 1rem 3rem;
+}
+.video video{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+	object-fit: cover;
+	opacity: 0.8;
+	border-radius: 1rem;
+}
+
+.video .video-title{
+    z-index: 2;
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    width: 100%;
+	font-size: 3rem;
+    text-align: center;
+	color: white;
+	font-family: 'Ubuntu', sans-serif;
+	font-style: italic;
+	font-weight: bold;
+}
+
+/* video going up when hover 
+.video:hover{
+	transform: translate(0px ,-10px);
+}
+ video going up when hover */
+
+
+/* Jumbutron video ====================== */
+
+.Signed{
+	color: white;
+}
+
+.imgBlogPost{
+	width: 100%;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.login-Form,.signUp-Form {
+    margin-top: 5rem;
+	margin-bottom: 2rem;
+
+}
+.login-Form form,.signUp-Form form{
+	width: 30%; 
+	margin: auto;
+}
+.login-Form h1,.signUp-Form h1{
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+	background-position: center;
+}
+
+/* card title ====================== */
+.card-headline{
+	height: 3rem; 
+    font-weight: bold;
+	display: grid;
+	place-items: center;
+}
+.card-headline p{
+	margin: 0;
+}
+/* card title ====================== */
+
+/* card going up when hover */
+.cardHover:hover{
+	transform: translate(0 ,-15px);
+	transition: box-shadow .3s;
+	box-shadow: 0 0 50px rgba(33,33,33,.2); 
+}
+/* card going up when hover */
+
+.headerHover:hover{
+	transform: translateY(-4px);
+}
+
+/*.blogpost__comments{
+	margin-bottom: 16px;
+    margin-top: 18px;
+    background: khaki;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}*/
+
+/* Hover effect above Images in index.ejs ====================  */
+
+.hovereffect {
+width:100%;
+height:100%;
+float:left;
+overflow:hidden;
+position:relative;
+text-align:center;
+cursor:default;
+}
+
+.hovereffect .overlay {
+width:100%;
+height:100%;
+position:absolute;
+overflow:hidden;
+top:0;
+left:0;
+opacity:0;
+background-color:rgba(0,0,0,0.5);
+-webkit-transition:all .4s ease-in-out;
+transition:all .4s ease-in-out
+}
+
+.hovereffect img {
+display:block;
+position:relative;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+}
+
+.hovereffect a.info {
+text-decoration:none;
+display:inline-block;
+text-transform:uppercase;
+color:#fff;
+border:1px solid #fff;
+background-color:transparent;
+opacity:0;
+filter:alpha(opacity=0);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+margin:50px 0 0;
+padding:7px 14px;
+}
+
+.hovereffect a.info:hover {
+box-shadow:0 0 5px #fff;
+}
+
+.hovereffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+opacity:1;
+filter:alpha(opacity=100);
+}
+
+.hovereffect:hover h2,.hovereffect:hover a.info {
+opacity:1;
+filter:alpha(opacity=100);
+-ms-transform:translatey(0);
+-webkit-transform:translatey(0);
+transform:translatey(0);
+}
+
+.hovereffect:hover a.info {
+-webkit-transition-delay:.2s;
+transition-delay:.2s;
+}
+
+/* Hover effect above Images in index.ejs ====================  */
+
+/* opening transition in homepage - cardbox moving up =========== */
+
+
+.cardAnimated{
+	animation-name: moveInFromBottom;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	backface-visibility: hidden;
+}
+
+@keyframes moveInFromBottom {
+	0%{
+		opacity: 0;
+		  transform: translateY(-20px);
+	}
+	
+	80%{
+		opacity: 1;
+		transform: translateY(10px);
+	}
+	
+	100%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+/* opening transition in homepage - cardbox moving up =========== */
+
+/* Resume Page =========== */
+.resume-contact{
+	border-left: 2px solid #E1E1E1;
+}
+
+.resume-name {
+    font-weight: 900;
+    letter-spacing: 0.4rem;
+    color: #54B689;
+}
+
+.resume-section-heading {
+    position: relative;
+    padding-left: 1rem;
+    letter-spacing: 0.15rem;
+    color: #54B689;
+	border-left: 8px solid #54B689;
+	padding-left: 10px;
+	font-size: 1.5rem;
+}
+.resume-main h4 {
+	font-size: 1.2rem;
+}
+.resume-main ul{
+	list-style-type: disc;
+}
+
+.resume-header h2{
+	width: fit-content;
+	font-size: 2.8vw;
+	text-align: center;
+	text-transform: uppercase;
+	margin: auto;
+}
+.resume-header h2 div{
+	font-size: 0.8rem;
+    text-align: center;
+	font-weight: 600;
+	margin-top: .3rem;
+}
+
+@media screen and (max-width: 768px) {
+	.resume-header h2  {
+		font-size: 1.5rem;
+  }
+	.resume-header h2 div {
+		font-size: 1.5vw;
+  }
+}
+
+
+.resume-header li{
+	margin-bottom: .7rem;
+}
+.resume-profile-image{
+	max-width: 10rem;
+}
+.resume-summary-p{
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	padding-top: 1rem;
+}
+.resume-body h4{
+	padding: 0rem;
+}
+
+.item-meta{
+	padding: 0rem;
+	font-size: 0.83rem;
+    color: #54b689;
+}
+ 
+.Education-section p {
+	margin: 0rem;
+}
+
+.resume-footer span{
+	font-size: .8rem;
+}
+
+/* Resume Page =========== */
+
+
+/* index Page =========== */
+.about-header{
+	background: #FAFAFA;
+	padding: 2rem;
+	color: #292929;  
+	text-align: center;
+}
+.about-header ul{
+	text-align: left;
+	list-style-type: disc;
+	margin: 1rem 0rem;
+}
+.about-header ul li{
+	margin-bottom: 0.6rem;
+}
+.about-header .about-header-img{
+	margin: auto;
+}
+
+.about-header h2{
+	font-size: 3rem;
+	font-weight: 700;    
+	margin-bottom: .25rem;    
+	line-height: 1.2;
+}
+.about-header h4{
+	font-size: 1.5rem;
+	font-weight: 300;    
+	margin-bottom: .25rem;    
+	line-height: 1.2;
+}
+.about-header img{
+	width: 100%;
+	max-width: 24rem;
+    min-width: 17rem;
+	border-radius: 1rem;
+}
+.about-header p{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.about-header a .headerHover{
+	background-color: #54b689;
+	border-color: #54b689;
+}
+.about-skills{
+    padding-bottom: 1rem !important;
+}
+.about-skills h2{
+    border-left: 5px solid #54B689;
+    padding-left: 1rem;
+}
+.about-skills h3{
+	font-size: 1rem;
+}
+.about-skills .item{
+	margin-bottom: 1rem;
+	padding-right: 0rem;
+} 
+.about-skills .item-desc{
+	color: #4f4f4f;
+    font-size: 0.875rem;
+}
+.about-skills .item-icon{
+	font-size: 2rem;
+}
+.about-skills .row{
+    padding: 0rem 3rem;
+}
+.latest-blogPosts h2{
+	border-left: 5px solid #54B689;
+    padding-left: 1rem;
+}
+/* index Page =========== */
+
+
+/* contact Page =========== */
+.contact-healine{
+	background-color: #FAFAFA;
+	padding: 3rem 0rem;
+}
+
+@media (min-width: 576px) {
+	.contact-healine .container {
+		padding: 0rem 3rem;;
+	}
+}
+
+@media (min-width: 768px) {
+	.contact-healine .container {
+		padding: 0rem 10rem;;
+	}
+}
+/* contact Page =========== */
+
+/*Scroll Bar Design=========== */
+
+.scrollbar {
+	overflow-y: scroll;
+}
+.scrollbar::-webkit-scrollbar,
+
+.scrollbar::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #43926e;
+	width: .4rem;
+}
+.scrollbar::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: #54B689;
+}
+
+/*Scroll Bar Design=========== */
+
+/* Services & Prices Page =========== */
+.pricing-table .pricing-package-title {
+    font-size: 1rem;
+    color: #54B689;
+    background: #fafafa;
+    text-align: center;
+    padding: 1rem;
+}
+.pricing-table tbody td {
+    padding: 1rem;
+    width: 23.3333333%;
+    text-align: center;
+    font-size: 0.875rem;
+}
+.pricing-table tbody th {
+    background: #fafafa;
+    padding: 1rem;
+    width: 30%;
+    font-size: 1rem;
+	text-align: center;
+}
+.pricing-table tfoot td {
+    padding: 1rem;
+    text-align: center;
+}
+
+.single-col-max-width {
+	width: 80%;
+}
+
+.pricing-table .price-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.faq-accordion .card-toggle {
+    color: #4f4f4f;
+    text-decoration: none;
+    display: block;
+	font-size: 1rem;
+}
+.table-bordered {
+    border: 1px solid #a9a9a9;
+}
+tr i{
+	font-size: x-large;
+}
+
+/* Services & Prices Page =========== */
+
+/* Blog Post - Disqus =========== */
+#disqus_thread{
+	padding: 0rem 3rem;
+}
+
+@media (max-width: 992px) {
+	#disqus_thread{
+		margin-left: 0rem;
+		padding: 0rem 3rem;
+	}	
+}
+/* Blog Post - Disqus =========== */
+
+
+
+
+

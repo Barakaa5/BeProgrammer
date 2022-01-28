@@ -1,0 +1,198 @@
+<% include partials/header%>
+
+	<!--Calculate time Reading of a description-->
+	<% function timeReading(description) {
+    const wordsPerMinute = 200; // Average case.
+    let textLength = description.split(" ").length + 500; // Split by words
+    if(textLength > 0){
+      let value = Math.ceil(textLength / wordsPerMinute);
+      return value;
+    }
+}%>
+		<!--Calculate time Reading of a description-->
+
+		<div class="main-wrapper">
+
+			<div class="about-header row">
+				<div class="col-lg-7">
+					<h2>Barak Amzaleg</h2>
+					<h4>Full Stack Web Developer</h4>
+					<div class="about-header-img col-lg-5 d-block d-lg-none">
+						<img src="./aboutMeImage.jpg">
+					</div>
+					<ul>
+						<li>I'm a <strong>Computer Science Student</strong> at "The Open University".</li>
+						<li>Do you need any help with an existing project, or creating a new one? Take a peek at my various skills and
+							<a href="/Resume" style="color: #54B689">
+								<strong>resume.</strong>
+							</a></li>
+						<li>Do you want to learn more about how to learn programming independently, and get accepted for a first job in the field? check out
+							<a href="/Blogposts" style="color: #54B689">
+								<strong>BeProgrammer Blog!</strong>
+							</a>
+						</li>
+					</ul>
+
+					<div class="mb-2">
+						<a class="btn btn-secondary headerHover" href="/Resume">
+							<i class="fas fa-file-alt mr-2"></i>View Resume</a>
+						<a class="btn btn-primary headerHover" href="/blogPosts">
+							<i class="fas fa-arrow-alt-circle-right mr-2"></i>View Blog</a>
+					</div>
+
+				</div>
+
+				<div class="about-header-img col-lg-5 d-none d-lg-block">
+					<img src="./aboutMeImage.jpg">
+				</div>
+			</div>
+
+			<section class="about-skills p-3 p-lg-5">
+				<div class="container">
+					<h2>My Skills</h2>
+					<div>
+						<p>
+							I am currently seeking my first high-tech job as a Full Stack Web Developer. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my online <a href="/Resume" style="color: #54B689"><strong>resume</strong></a>.
+						</p>
+					</div>
+					<div class="row px-0 px-md-5">
+						<div class="item col-6 col-lg-4 headerHover">
+							<div class="item-inner">
+								<div class="item-icon">
+									<i class="fab fa-html5 mr-2" style="color: #DE6E3C;"></i>
+								</div>
+								<h3 class="item-title">HTML5</h3>
+								<div class="item-desc">Classes, Id, Blocks, Images, Videos, Audio, Forms and more...</div>
+							</div>
+							<!--//item-inner-->
+						</div>
+						<!--//item-->
+
+						<div class="item col-6 col-lg-4 headerHover">
+							<div class="item-inner">
+								<div class="item-icon">
+									<i class="fab fa-css3-alt" style="color: #53A7DC;"></i>
+									<i class="fab fa-sass mr-2" style="color: #BF6B97;"></i>
+								</div>
+								<h3 class="item-title">Css &amp; Sass</h3>
+								<div class="item-desc">Animations, Sass, Scss , Grid System, Flexbox, Responsive design and more...</div>
+							</div>
+							<!--//item-inner-->
+						</div>
+						<!--//item-->
+
+						<div class="item col-6 col-lg-4 headerHover">
+							<div class="item-inner">
+								<div class="item-icon">
+									<i class="fab fa-js-square" style="color: #F1DE4F;"></i>
+									<i class="fab fa-java" style="color: #fd7e14;"></i>
+								</div>
+								<h3>JavaScript / Java</h3>
+								<div class="item-desc">Strings ,Functions, Objects, Arrays, ES6, jQuery and more...</div>
+							</div>
+							<!--//item-inner-->
+						</div>
+						<!--//item-->
+
+						<div class="item col-6 col-lg-4 headerHover">
+							<div class="item-inner">
+								<div class="item-icon">
+									<i class="fab fa-bootstrap" style="color: #563d7c;"></i>
+								</div>
+								<h3 class="item-title">Bootstrap 4</h3>
+								<div class="item-desc">The world’s most popular front-end component library. Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. </div>
+							</div>
+							<!--//item-inner-->
+						</div>
+						<!--//item-->
+
+						<div class="item col-6 col-lg-4 headerHover">
+							<div class="item-inner">
+								<div class="item-icon">
+									<i class="fab fa-react" style="color: #62D4FA;"></i>
+								</div>
+								<h3 class="item-title">React</h3>
+								<div class="item-desc">React.js, Hooks, Redux, React Routing, Animations, Next.js, Ajax and more...</div>
+							</div>
+							<!--//item-inner-->
+						</div>
+						<!--//item-->
+
+						<div class="item col-6 col-lg-4 headerHover">
+							<div class="item-inner">
+								<div class="item-icon">
+									<i class="fab fa-node" style="color: #54B689;"></i>
+								</div>
+								<h3 class="item-title">Node.js</h3>
+								<div class="item-desc">npm, Express.js, MongoDB, moment.js, highlights.js, Git, heroku and more...</div>
+							</div>
+							<!--//item-inner-->
+						</div>
+						<!--//item-->
+						<!--//row-->
+					</div>
+
+					<div class="text-center py-3">
+						<a href="/services" class="btn btn-primary headerHover">
+							<i class="fas fa-arrow-alt-circle-right mr-2"></i>Services &amp; Pricing
+						</a>
+					</div>
+
+				</div>
+				<!--//container-->
+			</section>
+
+			<hr style="width: 98%;">
+			<section class="latest-blogPosts">
+				<div class="container">
+					<h2>Latest Blog Posts</h2>
+				</div>
+				<div class="blog-lists row">
+					<% blogPost.slice(0, 3).forEach(function(blogPost){  %>
+						<div class="mb-5 col-12 col-sm-6 col-xl-4 cardAnimated">
+						<div class="card cardHover">
+							<div class="hovereffect">
+								<img class="img-responsive card-img-top" src="<%= blogPost.image %>" alt="">
+								<div class="overlay">
+									<a class="info" href="/blogPost/<%= blogPost._id %>" style="margin-top: 28%;">Read More</a>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="card-headline" style="text-align: center;">
+									<a href="/blogPost/<%= blogPost._id %>">
+										<%= blogPost.title %>
+									</a>
+								</div>
+								<hr style="margin-bottom: 0px;">
+								<div class="meta mb-1">
+									<span class="date">
+										<%= moment(blogPost.createdAt).fromNow() %>
+									</span>
+									<span class="time">
+										<%= timeReading(blogPost.description)%> min read</span>
+									<span class="comment">
+										<a href="https://protected-harbor-74374.herokuapp.com/blogPost/<%= blogPost._id %>#disqus_thread"></a>
+									</span>
+								</div>
+								<p class="card-text">
+									<%= blogPost.description.substring(0,290) %>...
+								</p>
+								<div style="text-align: center;">
+									<a class="btn btn-primary" href="/blogPost/<%= blogPost._id %>">Read more</a>
+								</div>
+							</div>
+						</div>
+					</div>
+						<% }); %>
+				</div>
+				<div style="text-align: center; margin-bottom: 2rem;">
+					<a class="btn btn-secondary headerHover" href="/blogPosts">
+						<i class="fas fa-arrow-alt-circle-right mr-2"></i> View Blog</a>
+				</div>
+			</section>
+			<!--//latest-blogPosts-->
+
+		</div>
+		<!--//main-wrapper-->
+
+		<% include partials/footer%>
